@@ -599,20 +599,49 @@ function FAQ() {
     if (!section || reduceMotion || !("IntersectionObserver" in window)) return undefined;
 
     const popTargets = [...section.querySelectorAll("[data-scroll-pop]")];
+    let animationFrame = 0;
+
+    const revealTarget = (target) => {
+      if (target.classList.contains("is-scroll-pop-visible")) return;
+      target.classList.add("is-scroll-pop-visible");
+      observer.unobserve(target);
+    };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-scroll-pop-visible");
-        observer.unobserve(entry.target);
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) revealTarget(entry.target);
       });
     }, { threshold: 0.5 });
+
+    const revealVisibleTargets = () => {
+      animationFrame = 0;
+      popTargets.forEach((target) => {
+        if (target.classList.contains("is-scroll-pop-visible")) return;
+        const bounds = target.getBoundingClientRect();
+        const visibleHeight = Math.max(0, Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0));
+        if (bounds.height > 0 && visibleHeight / bounds.height >= 0.5) revealTarget(target);
+      });
+    };
+
+    const scheduleVisibilityCheck = () => {
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(revealVisibleTargets);
+    };
 
     popTargets.forEach((target) => {
       target.classList.add("is-scroll-pop-ready");
       observer.observe(target);
     });
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", scheduleVisibilityCheck, { passive: true });
+    window.addEventListener("resize", scheduleVisibilityCheck);
+    scheduleVisibilityCheck();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", scheduleVisibilityCheck);
+      window.removeEventListener("resize", scheduleVisibilityCheck);
+      window.cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   return (
