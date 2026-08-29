@@ -1,0 +1,10 @@
+<svg width="132" height="32" viewBox="0 0 132 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0 4)" stroke="#047EFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="3.75" cy="18.75" r="2.25"/>
+    <circle cx="9" cy="9" r="2.25"/>
+    <circle cx="15" cy="15" r="2.25"/>
+    <circle cx="20.25" cy="5.25" r="2.25"/>
+    <path d="M6.32 14.77L7.93 11.98M10.59 10.59L13.41 13.41M16.07 13.02L19.18 7.23"/>
+  </g>
+  <text x="31" y="23" fill="#047EFB" font-family="Inter Display, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="-0.8">Viralup</text>
+</svg>

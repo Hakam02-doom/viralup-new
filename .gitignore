@@ -1,0 +1,9 @@
+node_modules/
+dist/
+outputs/
+work/
+.impeccable/review/
+.vercel/
+.DS_Store
+*.log
+

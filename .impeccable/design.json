@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T13:12:09Z",
+  "title": "Design System: Viralup",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Electric Growth Blue",
+        "canonical": "#047efb",
+        "tonalRamp": ["#001d3a", "#003b75", "#0059b0", "#047efb", "#55a8ff", "#91c8ff", "#c8e4ff", "#edf7ff"]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Hover Cobalt",
+        "canonical": "#0072eb",
+        "tonalRamp": ["#00182f", "#00315f", "#00498f", "#0072eb", "#4d9df4", "#8bc2fa", "#c5e1fd", "#edf7ff"]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Pale Signal Blue",
+        "canonical": "#eaf4ff",
+        "tonalRamp": ["#12253b", "#294867", "#477199", "#6e9ed1", "#9cc4e9", "#c7def4", "#eaf4ff", "#f7fbff"]
+      },
+      "rating": {
+        "role": "secondary",
+        "displayName": "Warm Rating Accent",
+        "canonical": "#ff8f00",
+        "tonalRamp": ["#321900", "#633300", "#954e00", "#c96c00", "#ff8f00", "#ffb34d", "#ffd28f", "#fff3e2"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Soft Neutral Ground",
+        "canonical": "#f5f5f5",
+        "tonalRamp": ["#262626", "#494949", "#6c6c6c", "#909090", "#b4b4b4", "#d5d5d5", "#e9e9e9", "#f5f5f5"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Inset White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#262626", "#4a4a4a", "#6f6f6f", "#959595", "#bbbbbb", "#dddddd", "#f0f0f0", "#ffffff"]
+      },
+      "surface-glass": {
+        "role": "neutral",
+        "displayName": "Glass White",
+        "canonical": "rgba(255, 255, 255, 0.82)",
+        "tonalRamp": ["rgba(38, 38, 38, 0.82)", "rgba(73, 73, 73, 0.82)", "rgba(108, 108, 108, 0.82)", "rgba(144, 144, 144, 0.82)", "rgba(180, 180, 180, 0.82)", "rgba(213, 213, 213, 0.82)", "rgba(236, 236, 236, 0.82)", "rgba(255, 255, 255, 0.82)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Primary Ink",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#202020", "#414141", "#626262", "#848484", "#a8a8a8", "#cecece", "#f2f2f2"]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "#5b5b5b",
+        "tonalRamp": ["#242424", "#404040", "#5b5b5b", "#777777", "#949494", "#b2b2b2", "#d1d1d1", "#f1f1f1"]
+      },
+      "placeholder-ink": {
+        "role": "neutral",
+        "displayName": "Placeholder Ink",
+        "canonical": "#858585",
+        "tonalRamp": ["#232323", "#414141", "#5f5f5f", "#858585", "#9f9f9f", "#bababa", "#d7d7d7", "#f2f2f2"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Quiet Hairline",
+        "canonical": "rgba(0, 0, 0, 0.08)",
+        "tonalRamp": ["rgba(0, 0, 0, 0.88)", "rgba(0, 0, 0, 0.68)", "rgba(0, 0, 0, 0.50)", "rgba(0, 0, 0, 0.34)", "rgba(0, 0, 0, 0.22)", "rgba(0, 0, 0, 0.14)", "rgba(0, 0, 0, 0.08)", "rgba(0, 0, 0, 0.03)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The centered hero promise."
+      },
+      "display-emphasis": {
+        "displayName": "Display Emphasis",
+        "purpose": "Italic cobalt words inside hero and section headlines only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section introductions and mission statements."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Process, card, and content-block titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Primary explanatory copy and global reading text."
+      },
+      "support-lead": {
+        "displayName": "Support Lead",
+        "purpose": "Centered supporting copy beneath the contact-route promise."
+      },
+      "form-label": {
+        "displayName": "Form Label",
+        "purpose": "Contact-field labels, filled controls, and the full-width submit action."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Dense descriptions inside cards and panels."
+      },
+      "button-label": {
+        "displayName": "Button Label",
+        "purpose": "Sentence-case actions in touch-safe controls."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Pills, chips, and compact proof metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ambient-small",
+        "value": "0 6px 18px rgba(0, 0, 0, 0.08)",
+        "purpose": "Surface buttons and the email subscription shell."
+      },
+      {
+        "name": "ambient-medium",
+        "value": "0 18px 50px rgba(0, 0, 0, 0.12)",
+        "purpose": "Open navigation, overlapping media, featured proof, and elevated card states."
+      },
+      {
+        "name": "floating-header",
+        "value": "0 12px 34px rgba(0, 0, 0, 0.06)",
+        "purpose": "Nearly imperceptible lift beneath the translucent header."
+      },
+      {
+        "name": "blue-action",
+        "value": "0 8px 18px rgba(4, 126, 251, 0.22)",
+        "purpose": "Resting lift beneath a primary action."
+      },
+      {
+        "name": "blue-action-hover",
+        "value": "0 12px 25px rgba(4, 126, 251, 0.28)",
+        "purpose": "Stronger primary-action feedback on hover."
+      },
+      {
+        "name": "hero-phone",
+        "value": "0 24px 45px rgba(0, 0, 0, 0.27)",
+        "purpose": "Structural separation for the device overlapping the hero video rail."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The standard expressive ease for transforms and disclosures."
+      },
+      {
+        "name": "state-color",
+        "value": "180ms ease",
+        "purpose": "Background, border, and text-color feedback."
+      },
+      {
+        "name": "state-transform",
+        "value": "220ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Button, icon, and compact control movement."
+      },
+      {
+        "name": "card-lift",
+        "value": "300ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Project-card lift and shadow response."
+      },
+      {
+        "name": "accordion-disclosure",
+        "value": "320ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "FAQ answer expansion and collapse."
+      },
+      {
+        "name": "media-scale",
+        "value": "650ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Slow project-media scale on hover."
+      },
+      {
+        "name": "hero-intro",
+        "value": "900ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single composed entrance for hero copy."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "980px"
+      },
+      {
+        "name": "stacked",
+        "value": "760px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The cobalt primary action used for the most direct next step.",
+      "html": "<button class=\"ds-button-primary\">See our work</button>",
+      "css": ".ds-button-primary { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px; border:0; border-radius:var(--radius-control, 8px); background:var(--blue, #047efb); color:#fff; box-shadow:0 8px 18px rgba(4,126,251,.22); font-family:\"Inter Display\",sans-serif; font-size:14px; font-weight:500; line-height:1; cursor:pointer; transition:transform 220ms var(--ease-out, cubic-bezier(.16,1,.3,1)), box-shadow 220ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background 180ms ease; } .ds-button-primary:hover { background:#0072eb; box-shadow:0 12px 25px rgba(4,126,251,.28); transform:translateY(-2px); } .ds-button-primary:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-button-primary:active { transform:translateY(1px) scale(.985); }"
+    },
+    {
+      "name": "Surface Button",
+      "kind": "button",
+      "refersTo": "button-surface",
+      "description": "The quiet white companion action used beside a cobalt primary button.",
+      "html": "<button class=\"ds-button-surface\">View pricing</button>",
+      "css": ".ds-button-surface { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px; border:0; border-radius:var(--radius-control, 8px); background:var(--surface, #fff); color:var(--ink, #000); box-shadow:var(--shadow-small, 0 6px 18px rgba(0,0,0,.08)); font-family:\"Inter Display\",sans-serif; font-size:14px; font-weight:500; line-height:1; cursor:pointer; transition:transform 220ms var(--ease-out, cubic-bezier(.16,1,.3,1)), box-shadow 220ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-button-surface:hover { transform:translateY(-2px); } .ds-button-surface:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-button-surface:active { transform:translateY(1px) scale(.985); }"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "The black high-contrast action used inside pale and white panels.",
+      "html": "<button class=\"ds-button-dark\">Contact us</button>",
+      "css": ".ds-button-dark { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px; border:0; border-radius:var(--radius-control, 8px); background:var(--ink, #000); color:#fff; font-family:\"Inter Display\",sans-serif; font-size:14px; font-weight:500; line-height:1; cursor:pointer; transition:transform 220ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background 180ms ease; } .ds-button-dark:hover { transform:translateY(-2px); } .ds-button-dark:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-button-dark:active { transform:translateY(1px) scale(.985); }"
+    },
+    {
+      "name": "Floating Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-floating",
+      "description": "The centered glass header that keeps menu, identity, and contact action balanced.",
+      "html": "<nav class=\"ds-floating-nav\" aria-label=\"Preview navigation\"><button class=\"ds-nav-icon\" aria-label=\"Open navigation\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><path d=\"M7 9h10M7 15h10\"/></svg></button><svg class=\"ds-nav-logo\" width=\"112\" height=\"28\" viewBox=\"0 0 132 32\" fill=\"none\" aria-label=\"Viralup\"><g transform=\"translate(0 4)\" stroke=\"#047efb\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"3.75\" cy=\"18.75\" r=\"2.25\"/><circle cx=\"9\" cy=\"9\" r=\"2.25\"/><circle cx=\"15\" cy=\"15\" r=\"2.25\"/><circle cx=\"20.25\" cy=\"5.25\" r=\"2.25\"/><path d=\"M6.32 14.77L7.93 11.98M10.59 10.59L13.41 13.41M16.07 13.02L19.18 7.23\"/></g><text x=\"31\" y=\"23\" fill=\"#047efb\" font-family=\"Inter Display, Arial, sans-serif\" font-size=\"22\" font-weight=\"500\" letter-spacing=\"-.8\">Viralup</text></svg><a class=\"ds-nav-cta\" href=\"#contact\">Contact us</a></nav>",
+      "css": ".ds-floating-nav { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; width:min(700px, calc(100% - 32px)); min-height:64px; padding:8px; border:1px solid rgba(255,255,255,.78); border-radius:14px; background:rgba(255,255,255,.82); box-shadow:0 12px 34px rgba(0,0,0,.06); backdrop-filter:blur(16px); font-family:\"Inter Display\",sans-serif; } .ds-nav-icon { display:inline-grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:8px; background:#f6f6f6; color:#000; cursor:pointer; transition:background 180ms ease, transform 180ms cubic-bezier(.16,1,.3,1); } .ds-nav-icon:hover { background:#ededed; } .ds-nav-icon:focus-visible, .ds-nav-cta:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-nav-logo { justify-self:center; } .ds-nav-cta { justify-self:end; display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:8px; background:#047efb; color:#fff; box-shadow:0 8px 18px rgba(4,126,251,.22); font-size:14px; font-weight:500; line-height:1; text-decoration:none; transition:transform 220ms cubic-bezier(.16,1,.3,1), background 180ms ease; } .ds-nav-cta:hover { background:#0072eb; transform:translateY(-2px); }"
+    },
+    {
+      "name": "Engagement Badge",
+      "kind": "chip",
+      "description": "The pill-shaped hero proof signal pairing a compact avatar stack with a growth claim.",
+      "html": "<div class=\"ds-engagement-badge\"><span class=\"ds-avatar-stack\" aria-hidden=\"true\"><img src=\"/assets/viralup/avatar-1.png\" alt=\"\"><img src=\"/assets/viralup/avatar-2.png\" alt=\"\"><img src=\"/assets/viralup/avatar-3.png\" alt=\"\"></span><strong>10x</strong>&nbsp;Engagement</div>",
+      "css": ".ds-engagement-badge { display:inline-flex; align-items:center; min-height:30px; padding:5px 10px 5px 7px; border:1px solid rgba(0,0,0,.08); border-radius:999px; background:rgba(255,255,255,.75); color:#5b5b5b; box-shadow:0 4px 14px rgba(0,0,0,.05); font-family:\"Inter Display\",sans-serif; font-size:11px; } .ds-engagement-badge strong { margin-left:7px; color:#000; } .ds-avatar-stack { display:flex; padding-left:4px; } .ds-avatar-stack img { display:block; width:20px; height:20px; margin-left:-4px; border:2px solid #fff; border-radius:50%; object-fit:cover; }"
+    },
+    {
+      "name": "Campaign Project Card",
+      "kind": "card",
+      "refersTo": "card-media",
+      "description": "The media-led case-study card whose metrics and diagonal arrow reveal on hover.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-media\"><img src=\"/assets/viralup/posters/bqik64G4tS4WLfBi5HEO8UkrKMM.jpg\" alt=\"Luminex campaign still\"><div class=\"ds-project-metrics\"><strong>175K</strong><strong>240%</strong><strong>198%</strong></div></div><div class=\"ds-project-caption\"><h3>Luminex</h3><p>Luminex gained more followers and engagement with easy social media campaigns.</p><svg class=\"ds-project-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></div></article>",
+      "css": ".ds-project-card { width:min(520px,100%); overflow:hidden; border-radius:16px; background:#fff; color:#000; font-family:\"Inter Display\",sans-serif; transition:transform 300ms cubic-bezier(.16,1,.3,1), box-shadow 300ms cubic-bezier(.16,1,.3,1); } .ds-project-card:hover { box-shadow:0 18px 50px rgba(0,0,0,.12); transform:translateY(-6px); } .ds-project-card:focus-within { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-project-media { position:relative; height:280px; overflow:hidden; background:#111; } .ds-project-media img { display:block; width:100%; height:100%; object-fit:cover; transition:transform 650ms cubic-bezier(.16,1,.3,1); } .ds-project-card:hover .ds-project-media img { transform:scale(1.035); } .ds-project-metrics { position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:space-between; padding:24px; background:linear-gradient(transparent 58%, rgba(0,0,0,.62)); color:#fff; opacity:0; transition:opacity 250ms ease; } .ds-project-card:hover .ds-project-metrics { opacity:1; } .ds-project-metrics strong { font-size:26px; font-weight:500; letter-spacing:-.04em; } .ds-project-caption { position:relative; min-height:132px; padding:22px 62px 22px 22px; } .ds-project-caption h3 { margin:0; font-size:20px; font-weight:500; letter-spacing:-.03em; } .ds-project-caption p { margin:8px 0 0; color:#5b5b5b; font-size:14px; line-height:1.45; } .ds-project-arrow { position:absolute; top:24px; right:24px; color:#047efb; opacity:0; transform:translate(-4px,4px); transition:opacity 220ms ease, transform 220ms cubic-bezier(.16,1,.3,1); } .ds-project-card:hover .ds-project-arrow { opacity:1; transform:none; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-media",
+      "description": "A compact white service tile with signal chips and an angled campaign image.",
+      "html": "<article class=\"ds-service-card\"><h3><span class=\"ds-service-icon\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></span>Content creation</h3><div class=\"ds-service-tags\"><span>Video assets</span><span>Scripts</span></div><img src=\"/assets/viralup/poster-james.jpg\" alt=\"\"></article>",
+      "css": ".ds-service-card { position:relative; width:min(350px,100%); min-height:210px; padding:22px; overflow:hidden; border-radius:16px; background:#fff; color:#000; font-family:\"Inter Display\",sans-serif; } .ds-service-card:focus-within { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-service-card h3 { position:relative; z-index:2; display:flex; align-items:center; gap:8px; margin:0; font-size:17px; font-weight:500; letter-spacing:-.03em; } .ds-service-icon { display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%; background:#000; color:#fff; } .ds-service-tags { position:absolute; z-index:2; bottom:22px; left:22px; display:flex; gap:6px; } .ds-service-tags span { display:inline-flex; align-items:center; min-height:24px; padding:0 9px; border-radius:999px; background:#eaf4ff; color:#047efb; font-size:11px; } .ds-service-card > img { position:absolute; right:-10px; bottom:-34px; width:145px; height:176px; border:5px solid #fff; border-radius:10px; object-fit:cover; box-shadow:0 12px 28px rgba(0,0,0,.18); transform:rotate(13deg); transition:transform 360ms cubic-bezier(.16,1,.3,1); } .ds-service-card:hover > img { transform:rotate(4deg) translateY(-8px); }"
+    },
+    {
+      "name": "FAQ Accordion Item",
+      "kind": "custom",
+      "refersTo": "panel-inset",
+      "description": "The soft-gray disclosure row shown inside the white FAQ panel.",
+      "html": "<article class=\"ds-faq-item ds-is-open\"><button type=\"button\" aria-expanded=\"true\"><span>How can I pause or cancel my subscription?</span><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><path d=\"m7 7 10 10M17 7 7 17\"/></svg></button><div class=\"ds-faq-answer\"><p>You can pause or cancel anytime easily without hidden fees or extra long-term commitments.</p></div></article>",
+      "css": ".ds-faq-item { width:min(700px,100%); overflow:hidden; border-radius:11px; background:#f5f5f5; color:#000; font-family:\"Inter Display\",sans-serif; } .ds-faq-item button { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:58px; padding:14px 18px; border:0; background:transparent; color:#000; text-align:left; cursor:pointer; } .ds-faq-item button span { padding-right:18px; font-size:15px; font-weight:500; } .ds-faq-item button:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:-3px; } .ds-faq-answer { display:grid; grid-template-rows:0fr; transition:grid-template-rows 320ms cubic-bezier(.16,1,.3,1); } .ds-faq-answer p { min-height:0; margin:0; padding:0 18px; overflow:hidden; color:#5b5b5b; font-size:13px; line-height:1.45; } .ds-faq-item.ds-is-open .ds-faq-answer { grid-template-rows:1fr; } .ds-faq-item.ds-is-open .ds-faq-answer p { padding-bottom:18px; }"
+    },
+    {
+      "name": "Subscribe Field",
+      "kind": "input",
+      "refersTo": "input-inline",
+      "description": "The borderless email input paired with a cobalt action inside a lifted white shell.",
+      "html": "<form class=\"ds-subscribe-form\"><label class=\"ds-sr-only\" for=\"ds-email\">Email address</label><input id=\"ds-email\" type=\"email\" placeholder=\"name@email.com\"><button type=\"submit\">Subscribe</button></form>",
+      "css": ".ds-subscribe-form { display:flex; width:min(440px,100%); padding:5px; border-radius:11px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.08); font-family:\"Inter Display\",sans-serif; } .ds-subscribe-form input { min-width:0; flex:1; min-height:44px; padding:0 14px; border:0; border-radius:8px; background:transparent; color:#000; font:inherit; outline:0; } .ds-subscribe-form input::placeholder { color:#777; } .ds-subscribe-form input:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:0; } .ds-subscribe-form button { min-height:44px; padding:0 20px; border:0; border-radius:8px; background:#047efb; color:#fff; font:inherit; font-size:14px; font-weight:500; cursor:pointer; transition:transform 220ms cubic-bezier(.16,1,.3,1), background 180ms ease; } .ds-subscribe-form button:hover { background:#0072eb; transform:translateY(-2px); } .ds-subscribe-form button:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; } .ds-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }"
+    },
+    {
+      "name": "Filled Select Field",
+      "kind": "input",
+      "refersTo": "field-filled",
+      "description": "The filled contact-form select with the reference-locked custom down-chevron.",
+      "html": "<label class=\"ds-contact-field\" for=\"ds-service\">Select Service<select id=\"ds-service\" name=\"service\"><option selected>Select...</option><option>Content creation</option><option>Strategy planning</option><option>Paid media</option></select></label>",
+      "css": ".ds-contact-field { display:flex; width:min(420px,100%); flex-direction:column; gap:10px; color:#000; font-family:\"Inter Display\",sans-serif; font-size:16px; font-weight:500; line-height:24px; letter-spacing:-.03em; } .ds-contact-field select { width:100%; height:40px; padding:8px 40px 8px 12px; border:0; border-radius:10px; appearance:none; background-color:#f5f5f5; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22 fill=%22none%22%3E%3Cpath d=%22m4.5 6.25 3.5 3.5 3.5-3.5%22 stroke=%22%23000%22 stroke-width=%221.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E'); background-repeat:no-repeat; background-position:right 14px center; background-size:16px 16px; color:#000; font:inherit; outline:0; cursor:pointer; } .ds-contact-field select:focus-visible { outline:3px solid rgba(4,126,251,.48); outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Campaign Proof Stream",
+    "overview": "“The Campaign Proof Stream” treats the approved Viralup reference as the visual authority: a soft neutral scroll canvas carries white inset surfaces, electric cobalt signals action and emphasis, and real campaign imagery supplies the energy. The interface feels contemporary, fashion-aware, and performance-minded without letting decorative UI compete with the work.\n\nDensity is airy and sequential. Large typographic promises introduce each chapter, then structured media grids, compact proof cards, and clear calls to action carry the narrative forward. Motion remains restrained: a single composed hero arrival, looping campaign reels, small hover lifts, and direct disclosure transitions.\n\nThe system rejects generic agency chrome that hides the product. Campaign work must remain visible, vivid, and compositionally central.",
+    "keyCharacteristics": [
+      "Soft neutral ground with white inset surfaces.",
+      "Electric cobalt used selectively for action, emphasis, and compact signals.",
+      "Inter Display structure punctuated by italic Instrument Serif emphasis.",
+      "Real campaign media used as the primary visual proof.",
+      "Rounded cards with quiet borders and selective ambient shadow.",
+      "Restrained, purposeful motion with reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Signal Rule",
+        "body": "Electric cobalt carries actions, emphasized words, and compact state signals; it does not become a large decorative background except for the approved pricing pause card.",
+        "section": "colors"
+      },
+      {
+        "name": "The Media Keeps Its Color Rule",
+        "body": "Keep campaign media vivid and untreated; the neutral interface exists to frame it, not recolor it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Split-Voice Rule",
+        "body": "Inter Display owns structure and information; Instrument Serif is reserved for the italic blue word or phrase inside a major headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Compact Promise Rule",
+        "body": "Major headings use tight negative tracking and near-solid leading, but remain short, balanced, and readable rather than wrapping into long editorial paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Media-Is-Proof Rule",
+        "body": "Layouts must give campaign imagery enough uninterrupted area to read as evidence, not as thumbnail decoration.",
+        "section": "layout"
+      },
+      {
+        "name": "The Sequential Collapse Rule",
+        "body": "Mobile preserves the desktop story order and emphasis; grids stack into one clear reading sequence instead of hiding essential sections.",
+        "section": "layout"
+      },
+      {
+        "name": "The Form-First Support Rule",
+        "body": "On narrow screens, place the full contact form before the help card, preserve their `20px` separation, and let the following FAQ and footer grow vertically rather than compressing their content.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-Until-Layered Rule",
+        "body": "Cards stay flat at rest unless they float, overlap, or are the active proof object; do not spread medium shadows across every white surface.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Radius Ladder Rule",
+        "body": "Use `8px` for controls, `16px` for standard cards, and `20px` for major grouped panels; intermediary radii belong only to the observed inset treatments.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Round Means Compact Rule",
+        "body": "Fully rounded shapes are reserved for small tags, avatars, switches, icon controls, and the engagement badge—not large content containers.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Quiet Motion Rule",
+        "body": "State transitions stay between roughly `180–360ms`; longer motion is reserved for the composed hero entrance and slow media scaling.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep campaign photography and video compositionally central and full-color.",
+      "Do use Electric Growth Blue for primary actions, headline emphasis, and compact state signals.",
+      "Do preserve the Inter Display and Instrument Serif split exactly: sans for structure, italic serif for selective emphasis.",
+      "Do keep the neutral canvas, white inset surfaces, generous section pacing, and observed `8px` / `16px` / `20px` radius ladder.",
+      "Do maintain visible focus, `44px` touch targets, semantic disclosure states, and reduced-motion behavior.",
+      "Do let desktop grids collapse into a complete, readable single-column story on mobile."
+    ],
+    "donts": [
+      "Don't replace real campaign media with decorative CSS artwork, generic illustration, or identity-inconsistent stock imagery.",
+      "Don't flood large areas with cobalt or introduce additional brand accents; the blue signal is effective because it is selective.",
+      "Don't use Instrument Serif for body copy, labels, navigation, or entire headings.",
+      "Don't add heavy shadow to every card; elevation must describe overlap, focus, or interaction.",
+      "Don't introduce sharp-edged panels, capsule-shaped large cards, gradients as generic decoration, or motion without a clear hierarchy or state purpose.",
+      "Don't reorder, hide, or compress away the campaign proof when adapting the surface responsively."
+    ]
+  }
+}
