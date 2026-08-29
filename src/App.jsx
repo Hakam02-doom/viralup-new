@@ -508,12 +508,12 @@ function Pricing() {
       <div className="section-label"><span aria-hidden="true" />Pricing</div>
       <AccentTitle className="pricing-title">Discover the <em>package</em><br />{" "}for best results</AccentTitle>
       <div className="pricing-wrap content-width">
-        <aside className="pause-card" data-scroll-pop>
+        <aside className="pause-card" data-scroll-pop="lift">
           <span><PauseBarsIcon /> Pause or cancel anytime</span>
           <img src={asset("pricing-arrow.png")} alt="" />
           <p>Easily pause or cancel your subscription anytime</p>
         </aside>
-        <article className="plan-card" data-scroll-pop>
+        <article className="plan-card" data-scroll-pop="lift">
           <div className="plan-intro">
             <div className="plan-copy">
               <span className="plan-label"><PlanIcon /> Basic Plan</span>
@@ -535,7 +535,7 @@ function Pricing() {
             {features.map((feature) => <li key={feature}>{feature}</li>)}
           </ul>
         </article>
-        <div className="call-banner" data-scroll-pop style={{ "--scroll-pop-delay": "100ms" }}>
+        <div className="call-banner" data-scroll-pop="lift" style={{ "--scroll-pop-delay": "100ms" }}>
           <h3>Schedule a call<br />with our experts</h3>
           <ul><li>Free Consultation</li><li>Growth Strategy</li><li>Expert Guidance</li></ul>
           <a className="button button--white" href="#contact">Talk with team</a>

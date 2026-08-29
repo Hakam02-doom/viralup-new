@@ -1934,6 +1934,10 @@ textarea:focus-visible {
   will-change: opacity, transform;
 }
 
+[data-scroll-pop="lift"].is-scroll-pop-ready {
+  transform: translate3d(0, 18px, 0);
+}
+
 [data-scroll-pop].is-scroll-pop-ready.is-scroll-pop-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
