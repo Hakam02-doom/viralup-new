@@ -16,6 +16,59 @@ const mediaShouldAutoplay =
   !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
   !new URLSearchParams(window.location.search).has("capture");
 
+function useScrollPopEffects(routeKey) {
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion || !("IntersectionObserver" in window)) return undefined;
+
+    const popTargets = [...document.querySelectorAll("[data-scroll-pop]")];
+    let animationFrame = 0;
+
+    const revealTarget = (target) => {
+      if (target.classList.contains("is-scroll-pop-visible")) return;
+      target.classList.add("is-scroll-pop-visible");
+      observer.unobserve(target);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) revealTarget(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    const revealVisibleTargets = () => {
+      animationFrame = 0;
+      popTargets.forEach((target) => {
+        if (target.classList.contains("is-scroll-pop-visible")) return;
+        const bounds = target.getBoundingClientRect();
+        const visibleHeight = Math.max(0, Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0));
+        if (bounds.height > 0 && visibleHeight / bounds.height >= 0.5) revealTarget(target);
+      });
+    };
+
+    const scheduleVisibilityCheck = () => {
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(revealVisibleTargets);
+    };
+
+    popTargets.forEach((target) => {
+      target.classList.add("is-scroll-pop-ready");
+      observer.observe(target);
+    });
+
+    window.addEventListener("scroll", scheduleVisibilityCheck, { passive: true });
+    window.addEventListener("resize", scheduleVisibilityCheck);
+    scheduleVisibilityCheck();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", scheduleVisibilityCheck);
+      window.removeEventListener("resize", scheduleVisibilityCheck);
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, [routeKey]);
+}
+
 function Logo({ className = "" }) {
   return <img className={`logo ${className}`} src={asset("logo.svg")} alt="Viralup" />;
 }
@@ -326,7 +379,7 @@ function Process() {
     <section className="section process-section" id="process">
       <div className="section-label"><span aria-hidden="true" />How we work</div>
       <AccentTitle className="process-title">Our process <em>drives</em><br />real social growth</AccentTitle>
-      <div className="process-panel content-width">
+      <div className="process-panel content-width" data-scroll-pop>
         <div className="process-list">
           {steps.map(([title, description]) => (
             <article key={title}>
@@ -350,8 +403,13 @@ function Projects() {
       <div className="section-label"><span aria-hidden="true" />Our Projects</div>
       <AccentTitle className="projects-title">Explore the <em>creative</em><br />work behind Viralup</AccentTitle>
       <div className="project-grid content-width">
-        {projectCards.map((project) => (
-          <article className="project-card" key={project.name}>
+        {projectCards.map((project, index) => (
+          <article
+            className="project-card"
+            data-scroll-pop
+            key={project.name}
+            style={{ "--scroll-pop-delay": `${Math.floor(index / 2) * 100}ms` }}
+          >
             <div className="project-media">
               <Video src={project.video} label={`${project.name} campaign`} />
               <div className="project-metrics" aria-hidden="true">
@@ -378,8 +436,8 @@ function About() {
   return (
     <section className="section about-section" id="about">
       <div className="about-grid content-width">
-        <img className="about-image" src={asset("mission-woman.png")} alt="A smiling creator holding a green phone" />
-        <div className="about-copy">
+        <img className="about-image" data-scroll-pop src={asset("mission-woman.png")} alt="A smiling creator holding a green phone" />
+        <div className="about-copy" data-scroll-pop>
           <div className="about-copy-top">
             <div className="section-label about-label"><span aria-hidden="true" />Our mission</div>
             <div className="about-story">
@@ -393,7 +451,7 @@ function About() {
           </div>
         </div>
 
-        <div className="about-copy about-copy--vision">
+        <div className="about-copy about-copy--vision" data-scroll-pop style={{ "--scroll-pop-delay": "100ms" }}>
           <div className="about-copy-top">
             <div className="section-label about-label"><span aria-hidden="true" />Our vision</div>
             <div className="about-story">
@@ -406,7 +464,7 @@ function About() {
             <div><strong>32+</strong><span>Team Members</span></div>
           </div>
         </div>
-        <img className="about-image about-image--vision" src={asset("vision-duo.png")} alt="Two creators comparing campaign content on their phones" />
+        <img className="about-image about-image--vision" data-scroll-pop style={{ "--scroll-pop-delay": "100ms" }} src={asset("vision-duo.png")} alt="Two creators comparing campaign content on their phones" />
       </div>
     </section>
   );
@@ -418,8 +476,13 @@ function Services() {
       <div className="section-label"><span aria-hidden="true" />Our services</div>
       <AccentTitle className="services-title">We provide <em>services</em><br />that elevate growth</AccentTitle>
       <div className="services-grid content-width">
-        {services.map((service) => (
-          <article className="service-card" key={service.title}>
+        {services.map((service, index) => (
+          <article
+            className="service-card"
+            data-scroll-pop
+            key={service.title}
+            style={{ "--scroll-pop-delay": `${Math.floor(index / 3) * 100}ms` }}
+          >
             <h3><span className="service-icon"><ServiceSparkleIcon /></span>{service.title}</h3>
             <div className="service-tags">
               {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
@@ -445,12 +508,12 @@ function Pricing() {
       <div className="section-label"><span aria-hidden="true" />Pricing</div>
       <AccentTitle className="pricing-title">Discover the <em>package</em><br />{" "}for best results</AccentTitle>
       <div className="pricing-wrap content-width">
-        <aside className="pause-card">
+        <aside className="pause-card" data-scroll-pop>
           <span><PauseBarsIcon /> Pause or cancel anytime</span>
           <img src={asset("pricing-arrow.png")} alt="" />
           <p>Easily pause or cancel your subscription anytime</p>
         </aside>
-        <article className="plan-card">
+        <article className="plan-card" data-scroll-pop>
           <div className="plan-intro">
             <div className="plan-copy">
               <span className="plan-label"><PlanIcon /> Basic Plan</span>
@@ -472,7 +535,7 @@ function Pricing() {
             {features.map((feature) => <li key={feature}>{feature}</li>)}
           </ul>
         </article>
-        <div className="call-banner">
+        <div className="call-banner" data-scroll-pop style={{ "--scroll-pop-delay": "100ms" }}>
           <h3>Schedule a call<br />with our experts</h3>
           <ul><li>Free Consultation</li><li>Growth Strategy</li><li>Expert Guidance</li></ul>
           <a className="button button--white" href="#contact">Talk with team</a>
@@ -488,8 +551,13 @@ function Team() {
       <div className="section-label"><span aria-hidden="true" />Our team</div>
       <AccentTitle className="team-title">Experts behind <em>every</em><br />successful campaign</AccentTitle>
       <div className="team-grid content-width">
-        {team.map((person) => (
-          <article className="team-card" key={person.name}>
+        {team.map((person, index) => (
+          <article
+            className="team-card"
+            data-scroll-pop
+            key={person.name}
+            style={{ "--scroll-pop-delay": `${Math.floor(index / 2) * 100}ms` }}
+          >
             <img src={person.image} alt={`${person.name}, ${person.role}`} />
             <div className="team-copy">
               <span className="role-chip"><i aria-hidden="true" />{person.role}</span>
@@ -564,7 +632,7 @@ function Testimonials() {
     <section className="section testimonials-section" id="testimonials" ref={sectionRef}>
       <div className="section-label"><span aria-hidden="true" />Testimonials</div>
       <AccentTitle className="testimonials-title">Words from <em>brands</em><br />{" "}we helped grow</AccentTitle>
-      <div className="testimonial-stage content-width">
+      <div className="testimonial-stage content-width" data-scroll-pop>
         <div className="testimonial-column testimonial-column--left" aria-hidden="true">
           <div className={`testimonial-track${tickerActive ? " is-running" : ""}`}>
             {[...leftReviews, ...leftReviews].map((review, index) => <TestimonialCard {...review} key={`${review.name}-${index}`} />)}
@@ -590,62 +658,9 @@ function Testimonials() {
 
 function FAQ() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (!section || reduceMotion || !("IntersectionObserver" in window)) return undefined;
-
-    const popTargets = [...section.querySelectorAll("[data-scroll-pop]")];
-    let animationFrame = 0;
-
-    const revealTarget = (target) => {
-      if (target.classList.contains("is-scroll-pop-visible")) return;
-      target.classList.add("is-scroll-pop-visible");
-      observer.unobserve(target);
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) revealTarget(entry.target);
-      });
-    }, { threshold: 0.5 });
-
-    const revealVisibleTargets = () => {
-      animationFrame = 0;
-      popTargets.forEach((target) => {
-        if (target.classList.contains("is-scroll-pop-visible")) return;
-        const bounds = target.getBoundingClientRect();
-        const visibleHeight = Math.max(0, Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0));
-        if (bounds.height > 0 && visibleHeight / bounds.height >= 0.5) revealTarget(target);
-      });
-    };
-
-    const scheduleVisibilityCheck = () => {
-      if (!animationFrame) animationFrame = window.requestAnimationFrame(revealVisibleTargets);
-    };
-
-    popTargets.forEach((target) => {
-      target.classList.add("is-scroll-pop-ready");
-      observer.observe(target);
-    });
-
-    window.addEventListener("scroll", scheduleVisibilityCheck, { passive: true });
-    window.addEventListener("resize", scheduleVisibilityCheck);
-    scheduleVisibilityCheck();
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", scheduleVisibilityCheck);
-      window.removeEventListener("resize", scheduleVisibilityCheck);
-      window.cancelAnimationFrame(animationFrame);
-    };
-  }, []);
 
   return (
-    <section className="section faq-section" id="faq" ref={sectionRef}>
+    <section className="section faq-section" id="faq">
       <div className="section-label"><span aria-hidden="true" />FAQ</div>
       <AccentTitle className="faq-title">Frequently asked <em>questions</em><br />{" "}about Viralup services</AccentTitle>
       <div className="faq-card">
@@ -824,6 +839,8 @@ function Footer({ isContactPage = false }) {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const isContactPage = window.location.pathname.replace(/\/+$/, "") === "/contact-us";
+
+  useScrollPopEffects(isContactPage);
 
   useEffect(() => {
     const lenis = new Lenis({
