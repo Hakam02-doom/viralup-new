@@ -590,16 +590,45 @@ function Testimonials() {
 
 function FAQ() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!section || reduceMotion || !("IntersectionObserver" in window)) return undefined;
+
+    const popTargets = [...section.querySelectorAll("[data-scroll-pop]")];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-scroll-pop-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    popTargets.forEach((target) => {
+      target.classList.add("is-scroll-pop-ready");
+      observer.observe(target);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="section faq-section" id="faq">
+    <section className="section faq-section" id="faq" ref={sectionRef}>
       <div className="section-label"><span aria-hidden="true" />FAQ</div>
       <AccentTitle className="faq-title">Frequently asked <em>questions</em><br />{" "}about Viralup services</AccentTitle>
       <div className="faq-card">
         {faqItems.map(([question, answer], index) => {
           const open = activeIndex === index;
           return (
-            <article className={`faq-item ${open ? "is-open" : ""}`} key={question}>
+            <article
+              className={`faq-item ${open ? "is-open" : ""}`}
+              data-scroll-pop
+              key={question}
+              style={{ "--scroll-pop-delay": `${Math.floor(index / 2) * 100}ms` }}
+            >
               <button type="button" aria-expanded={open} onClick={() => setActiveIndex(open ? -1 : index)}>
                 <span>{question}</span><Icon name={open ? "close" : "plus"} size={17} />
               </button>
@@ -607,7 +636,7 @@ function FAQ() {
             </article>
           );
         })}
-        <div className="faq-contact">
+        <div className="faq-contact" data-scroll-pop style={{ "--scroll-pop-delay": "200ms" }}>
           <span className="mail-circle"><Icon name="mail" size={18} /></span>
           <div><strong>Email us</strong><a href="mailto:mudasirhussain5852@gmail.com">mudasirhussain5852@gmail.com</a></div>
           <a className="button button--black" href="#contact">Contact us</a>
