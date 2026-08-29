@@ -1,0 +1,13 @@
+.git/
+.github/
+.vercel/
+.impeccable/
+node_modules/
+dist/
+outputs/
+work/
+.env
+.env.*
+*.log
+*.md
+brand-spec.md
