@@ -2900,6 +2900,8 @@ textarea:focus-visible {
   }
 
   .about-grid > .about-copy:not(.about-copy--vision) {
+    position: relative;
+    top: 18px;
     grid-row: 1;
   }
 
@@ -3037,19 +3039,22 @@ textarea:focus-visible {
     --partner-logo-width: 100px;
     --partner-loop-offset: 9px;
   }
-  .section { padding-top: 120px; }
+  .section { padding-top: 64px; }
   .section-title { font-size: clamp(37px, 8vw, 47px); }
-  .process-section { min-height: 1070px; padding-top: 64px; padding-bottom: 64px; }
+  .process-section { min-height: 1108px; padding-top: 64px; padding-bottom: 64px; }
   .process-title { margin-top: 22px; }
   .process-panel.content-width { width: calc(100% - 32px); padding: 28px; margin-top: 58px; }
   .process-images img { width: 230px; height: 165px; }
   .process-images img:first-child { left: 8px; }
   .process-images img:last-child { right: 12px; bottom: 30px; }
-  .projects-section { height: auto; min-height: 2150px; padding-top: 64px; padding-bottom: 64px; }
+  .projects-section { height: auto; min-height: 2429px; padding-top: 64px; padding-bottom: 46px; }
   .projects-title { margin-top: 22px; }
-  .project-grid.content-width { grid-template-columns: 1fr; width: calc(100% - 32px); margin-top: 58px; }
-  .project-media { height: 380px; }
-  .services-grid.content-width { width: calc(100% - 32px); margin-top: 58px; }
+  .project-grid.content-width { grid-template-columns: 1fr; width: calc(100% - 32px); margin-top: 67px; }
+  .project-media { height: 365px; }
+  .services-section { min-height: 2323px; padding-top: 64px; padding-bottom: 46px; }
+  .services-grid.content-width { grid-template-columns: 1fr; width: calc(100% - 32px); margin-top: 66px; }
+  .section.about-section { min-height: 0; padding-block: 64px; }
+  .pricing-section { min-height: 1604px; padding-block: 64px; }
   .faq-card { width: min(600px, calc(100% - 40px)); margin-top: 72px; }
   .contact-section { min-height: 0; }
   .footer-grid { grid-template-columns: 1.2fr 0.8fr; }
@@ -3100,22 +3105,22 @@ textarea:focus-visible {
     font-size: 36px;
     line-height: 38.333px;
   }
-  .process-section { min-height: 1213px; padding-top: 64px; padding-bottom: 64px; }
+  .process-section { height: auto; min-height: 0; padding-top: 64px; padding-bottom: 64px; }
   .section-label { font-size: 14px; }
   .process-panel.content-width { width: calc(100% - 24px); padding: 22px; }
   .process-list article { gap: 12px; }
   .process-images { min-height: 300px; }
   .process-images img { width: 190px; height: 145px; }
   .process-images img:last-child { right: -2px; }
-  .projects-section { min-height: 2429px; padding-top: 64px; padding-bottom: 64px; }
-  .project-grid.content-width { width: calc(100% - 24px); }
-  .project-media { height: 280px; }
-  .project-caption { min-height: 145px; }
+  .projects-section { min-height: 2429px; padding-top: 64px; padding-bottom: 46px; }
+  .project-grid.content-width { width: calc(100% - 24px); margin-top: 91px; }
+  .project-media { height: 365px; }
+  .project-caption { min-height: 129.8px; }
   .stat-row strong { font-size: 39px; }
-  .section.about-section { min-height: 1788px; padding-block: 64px; }
+  .section.about-section { min-height: 0; padding-block: 64px; }
   .about-copy { gap: 30px; }
-  .services-section { min-height: 2323px; padding-top: 64px; padding-bottom: 64px; }
-  .services-grid.content-width { grid-template-columns: 1fr; width: calc(100% - 24px); }
+  .services-section { min-height: 2323px; padding-top: 64px; padding-bottom: 46px; }
+  .services-grid.content-width { grid-template-columns: 1fr; width: calc(100% - 24px); margin-top: 91px; }
   .service-card { min-height: 190px; }
   .pricing-section { min-height: 1678px; padding: 64px 0 61px; }
   .pricing-wrap.content-width { width: calc(100% - 24px); margin-top: 72px; }
